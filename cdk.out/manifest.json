@@ -1,0 +1,143 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "CdkPythonStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkPythonStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkPythonStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "CdkPythonStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/9ae78d8b6216348a07647efaa36939b62f53bc9e4443d2991d7b0d6d0e5fb86b.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkPythonStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkPythonStack.assets"
+      ],
+      "metadata": {
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiBucket17E9A2D4"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiBucketPolicy6DF4627E"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiBucketAutoDeleteObjectsCustomResource137D1CFC"
+          }
+        ],
+        "/CdkPythonStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/CdkPythonStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiOAI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiOAI42CFFC6D"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiWebsiteDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiWebsiteDistribution6D946F8D"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiDeployWithInvalidations/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiDeployWithInvalidationsAwsCliLayer564BE734"
+          }
+        ],
+        "/CdkPythonStack/NodejsAwsShopReactDzmitryStruneuskiDeployWithInvalidations/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodejsAwsShopReactDzmitryStruneuskiDeployWithInvalidationsCustomResourceD6F37963"
+          }
+        ],
+        "/CdkPythonStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+          }
+        ],
+        "/CdkPythonStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+          }
+        ],
+        "/CdkPythonStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+          }
+        ],
+        "/CdkPythonStack/CloudFrontDistributionId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFrontDistributionId"
+          }
+        ],
+        "/CdkPythonStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkPythonStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkPythonStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkPythonStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
