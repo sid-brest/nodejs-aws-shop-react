@@ -10,7 +10,13 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:synth": "cdk synth --app \"python3 app.py\"",
+    "cdk:deploy": "cdk deploy --all --require-approval never --app \"python3 app.py\"",
+    "cdk:destroy": "cdk destroy --all --force --app \"python3 app.py\"",
+    "cloudfront:invalidate": "CLOUDFRONT_DISTRIBUTION_ID=$(cat distribution-id.txt) node invalidate-cloudfront.js",
+    "deploy": "npm run build && npm run cdk:deploy && npm run get-distribution-id && npm run cloudfront:invalidate",
+    "get-distribution-id": "aws cloudformation describe-stacks --stack-name CdkPythonStack --query \"Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue\" --output text > distribution-id.txt"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -25,7 +31,8 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
